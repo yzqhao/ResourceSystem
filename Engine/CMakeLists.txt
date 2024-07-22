@@ -65,18 +65,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_EDITOR_RELEASE ${ROOT_PATH}/bin/)
 ################################################################################
 add_library(${PROJECT_NAME} ${LIBRARY_TYPE_BY_PLATFORM} ${ALL_FILES})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "Engine")
-
-################################################################################
-# PreParser
-################################################################################
-### precompile
-# set global vari used by precompile
-
-set(CODEGEN_TARGET "PreCompile")
-include(precompile/precompile.cmake)
-set_target_properties("${CODEGEN_TARGET}" PROPERTIES FOLDER "Engine" )
-
-add_dependencies("${CODEGEN_TARGET}" "Parser")
 	
 ################################################################################
 # Target name
